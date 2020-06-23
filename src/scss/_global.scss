@@ -1,0 +1,219 @@
+@import "./scss/_variables.scss";
+
+// Main 
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $font-color;
+  font-size: $font-size;
+  background: $app-bg-color;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: $font-color;
+  background: $app-bg-color;
+  margin : 0;
+}
+.container {
+    max-width: 1840px;
+    display:  flex;
+    margin: auto;
+    padding: 0 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $card-bg;
+  a {
+    font-weight: 700;
+    color: $font-color;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 2px solid ;
+    }
+
+    &.router-link-exact-active {
+      color: $primary-color;
+      border-bottom: 2px solid ;
+    }
+  }
+}
+.hero {
+  background: $primary-color;
+  display: flex;
+  flex-direction: column;
+  color: $card-bg;
+  justify-content: center;
+  align-items: center;
+} 
+.hero-bar {
+  z-index: 1;
+  padding: 20px 40px;
+  background: $primary-color;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+}
+h2 {
+  margin-top: 0;
+  flex-basis: 100%;
+  text-align: center;
+  color: $card-bg;
+}
+
+//Comments
+.comment-item {
+  border: 1px solid lighten($card-bg, 10%);
+  margin-top: 5px;
+  background-color: lighten($card-bg, 10%);
+  border-radius: 16px;
+  width: 100%;
+  padding: 5px 12px;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+
+  &:hover {
+    button {
+      visibility: visible;
+    }
+  }
+}
+
+.comment-section {
+  margin-top: 20px;
+}
+.comment-list {
+  padding: 0;
+  padding-top: 10px;
+  list-style-type: none;
+}
+
+.input {
+  outline: none;
+  font-size: 16px;
+  background-color: lighten($card-bg, 10%);
+  width: 100%;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  color: $font-color;
+  border: 2px solid $card-bg;
+  border-radius: 2px;
+  &:focus {
+    border-color: $primary-color;
+  }
+  &::placeholder {
+    color: darken($font-color, 30%);
+  }
+}
+.time {
+  font-size: 10px;
+  color: darken($font-color, 40%);
+  margin: 0 5px;
+  white-space: nowrap;
+}
+
+//Favorites
+.favorite-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px 20px 40px 20px;
+  width: 100%;
+}
+.favorite-item {
+  border-radius: 2px;
+  background-color: $card-bg;
+}
+.grid-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 250px auto;
+  grid-gap: 2px;
+  height: 100%;
+  .column-one {
+    padding: 20px;
+    grid-column: span 2;
+    text-align: center;
+    border-bottom: 1px $card-border-color solid;
+    img {
+      max-width: 100%;
+      max-height: 250px;
+    }
+  }
+  .column-two,
+  .column-three {
+    padding: 20px;
+    display: flex;
+  }
+  .column-three {
+    justify-content: flex-end;
+  }
+  .btn-remove {
+    visibility: hidden;
+  }
+  &:hover {
+    .btn-remove {
+      visibility: visible;
+    }
+  }
+}
+
+//Gifs search results
+.img-state {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-weight: 700;
+  font-size: 20px;
+  color: $card-bg;
+  background-color: rgba($primary-color, 0.7);
+  text-align: center;
+}
+
+.img-item {
+  display: flex;
+  position: relative;
+  margin-bottom: 20px;
+  width: 200px;
+  height: auto;
+  border-radius: 2px;
+  justify-content: center;
+  align-content: center;
+  &:hover {
+    button {
+      display: flex;
+    }
+  }
+}
+.img-container {
+  background-color: $card-bg;
+  padding: 20px 20px 40px 20px;
+  display:flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  .column {
+    flex: 200px;
+    max-width: 200px;
+    margin: 0 10px;
+    .img {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+}
