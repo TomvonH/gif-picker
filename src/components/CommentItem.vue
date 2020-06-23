@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="comment-item">
-      <span>{{ comment }}</span>
+      <span class="comment">{{ comment }}</span>
       <div style="display: flex;">
         <span class="time">{{time}}</span>
         <BaseButton class="btn-remove" @click.native="removeComment">

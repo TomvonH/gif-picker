@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="hero-bar">
-      <h2 v-if="allFavorites.length > 0">{{ title }}</h2>
-      <h2 v-if="allFavorites.length <= 0">{{ titleNoFavorites }}</h2>
+      <h2 class="hero-title" v-if="allFavorites.length > 0">{{ title }}</h2>
+      <h2 class="hero-title" v-if="allFavorites.length <= 0">{{ titleNoFavorites }}</h2>
       <BaseButton class="btn-inverted" @click.native="goToHome">{{ addMoreFavorites }}</BaseButton>
     </div>
     <transition-group name="fade-slide" tag="div" class="favorite-container">

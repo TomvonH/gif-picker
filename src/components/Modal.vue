@@ -75,6 +75,10 @@ export default {
 .modal-body {
   position: relative;
   padding: 20px 10px;
+
+  img {
+    max-height: 350px;
+  }
 }
 .btn-close {
   color: $primary-color;

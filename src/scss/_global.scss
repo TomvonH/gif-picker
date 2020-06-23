@@ -1,8 +1,10 @@
 @import "./scss/_variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 
 // Main 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $font-color;
@@ -56,6 +58,8 @@ body {
   color: $card-bg;
   justify-content: center;
   align-items: center;
+  height:250px;
+  overflow: hidden;;
 } 
 .hero-bar {
   z-index: 1;
@@ -67,7 +71,7 @@ body {
   position: sticky;
   top: 0;
 }
-h2 {
+.hero-title {
   margin-top: 0;
   flex-basis: 100%;
   text-align: center;
@@ -92,6 +96,9 @@ h2 {
     }
   }
 }
+.comment {
+  align-self: center;
+}
 
 .comment-section {
   margin-top: 20px;
@@ -100,6 +107,23 @@ h2 {
   padding: 0;
   padding-top: 10px;
   list-style-type: none;
+}
+
+.input-container {
+  position: relative;
+  button {
+    position: absolute;
+    color: $primary-color;
+    top: 4px;
+    right: 5px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .input {

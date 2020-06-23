@@ -1,12 +1,17 @@
 <template>
   <div class="comment-section">
-    <input
-      class="input"
-      v-model="message"
-      @keyup.enter="addComment"
-      placeholder="Write a comment"
-      autofocus
-    />
+    <div class="input-container">
+      <input
+        class="input"
+        v-model="message"
+        @keyup.enter="addComment"
+        placeholder="Write a comment"
+        autofocus
+      />
+      <button @click.prevent="addComment" v-if="message.length >0">
+        <send-icon></send-icon>
+      </button>
+    </div>
     <div class="comment-list">
       <transition-group name="slide-fade" tag="div">
         <div v-for="(comment, id) in comments" :key="comment.id">
@@ -19,9 +24,11 @@
 
 <script>
 import CommentItem from "./CommentItem";
+import SendIcon from "vue-material-design-icons/Send.vue";
 export default {
   components: {
-    CommentItem
+    CommentItem,
+    SendIcon
   },
   props: {
     comments: Array
