@@ -8,6 +8,7 @@
       </div>
     </div>
     <div class="container">
+        <img v-if="allFavorites.length <= 0" :src="noResult" style="padding-top: 40px"/>
       <transition-group name="fade" tag="div" class="favorite-container">
         <FavoriteItem
           v-for="favorite in showNumberOfFavorites"
@@ -56,6 +57,7 @@ export default {
   },
   data() {
     return {
+      noResult: "https://media.giphy.com/media/11R5KYi6ZdP8Z2/giphy.gif",
       isModalVisible: false,
       gif: {},
       title:

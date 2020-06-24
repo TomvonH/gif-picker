@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.391d057fff971b3f3c600f8dc80c1933.js"
+  "/precache-manifest.7daa7838201c8b2be22d3eb716560d3b.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "gif-picker"});
