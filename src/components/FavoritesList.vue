@@ -62,7 +62,7 @@ export default {
       gif: {},
       title:
         "Welcome to your Favorites! Is there anything else you want to add?",
-      titleNoFavorites: "Looks like you dont' have favorites yet.",
+      titleNoFavorites: "Looks like you don't have any favorites yet.",
       addMoreFavorites: "Add more favorites",
       currentPage: 1,
       pageCount: 0,
