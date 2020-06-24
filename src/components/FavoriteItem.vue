@@ -13,7 +13,7 @@
         <BaseButton
           @click.native="openGifInModal"
           class="button-overlay"
-        >{{ gif.comments.length }} comments</BaseButton>
+        >{{ gif.comments.length }} {{setComment}}</BaseButton>
       </div>
     </div>
   </div>
@@ -31,9 +31,16 @@ export default {
     gif: Object,
     isFavorite: Boolean
   },
+
   computed: {
     setSrc() {
       return `https://media.giphy.com/media/${this.gif.id}/200.gif`;
+    },
+    setComment() {
+      if (this.gif.comments.length === 1) {
+        return "Comment"
+      }
+      return "Comments"
     }
   },
 
