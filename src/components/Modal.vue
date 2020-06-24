@@ -11,7 +11,7 @@
         <slot name="body"></slot>
       </section>
       <footer class="modal-footer">
-        <BaseButton type="button" @click.native="close">Close</BaseButton>
+        <BaseButton class="btn-link" type="button" @click.native="close">Close</BaseButton>
       </footer>
     </div>
   </div>
@@ -69,7 +69,7 @@ export default {
 
 .modal-footer {
   border-top: 1px solid $card-border-color;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .modal-body {

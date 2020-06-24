@@ -1,9 +1,11 @@
 <template>
   <div>
     <div class="hero-bar">
-      <h2 class="hero-title" v-if="allFavorites.length > 0">{{ title }}</h2>
-      <h2 class="hero-title" v-if="allFavorites.length <= 0">{{ titleNoFavorites }}</h2>
-      <BaseButton class="btn-inverted" @click.native="goToHome">{{ addMoreFavorites }}</BaseButton>
+      <div class="hero-container">
+        <h2 class="hero-title" v-if="allFavorites.length > 0">{{ title }}</h2>
+        <h2 class="hero-title" v-if="allFavorites.length <= 0">{{ titleNoFavorites }}</h2>
+        <BaseButton class="btn-inverted" @click.native="goToHome">{{ addMoreFavorites }}</BaseButton>
+      </div>
     </div>
     <transition-group name="fade-slide" tag="div" class="favorite-container">
       <FavoriteItem
@@ -16,6 +18,7 @@
         @openGifInModal="openGifInModal(favorite)"
       />
     </transition-group>
+
     <Modal v-show="isModalVisible" @close="closeModal">
       <template v-slot:header>{{ gif.title }}</template>
       <template v-slot:body>

@@ -11,6 +11,7 @@
   display: flex;
   font-size: $font-size;
   background-color: transparent;
+  font-family: inherit;
   font-weight: 700;
   line-height: 1.5;
   color: $primary-color;
@@ -22,8 +23,7 @@
   &[disabled] {
     border-color: $disabled-bg;
     background: $disabled-bg;
-    color: $font-color;
-    opacity: 0.5;
+    color: darken($font-color, 20%);
     pointer-events: none;
   }
   &:hover {
@@ -38,6 +38,20 @@
   &:hover {
     color: $card-bg;
     background-color: darken($primary-color, 10%);
+  }
+}
+.btn-link {
+  background-color: transparent;
+  border: 0;
+  font-size: $font-size;
+  border-bottom: 1px dashed $primary-color;
+  border-radius: 0px;
+  color: $primary-color;
+  padding: 5px 0px;
+  font-weight: 300px;
+  &:hover {
+    background-color: transparent;
+    color: darken($primary-color, 10%);
   }
 }
 .btn-remove {

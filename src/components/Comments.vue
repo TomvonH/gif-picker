@@ -2,15 +2,17 @@
   <div class="comment-section">
     <div class="input-container">
       <input
+        ref="input"
         class="input"
         v-model="message"
         @keyup.enter="addComment"
         placeholder="Write a comment"
         autofocus
       />
-      <button @click.prevent="addComment" v-if="message.length >0">
+      <BaseButton @click.native="addComment" :disabled="message.length <= 0">
         <send-icon></send-icon>
-      </button>
+        {{post}}
+      </BaseButton>
     </div>
     <div class="comment-list">
       <transition-group name="slide-fade" tag="div">
@@ -24,18 +26,21 @@
 
 <script>
 import CommentItem from "./CommentItem";
+import BaseButton from "./BaseButton";
 import SendIcon from "vue-material-design-icons/Send.vue";
 export default {
   components: {
     CommentItem,
-    SendIcon
+    SendIcon,
+    BaseButton
   },
   props: {
     comments: Array
   },
   data() {
     return {
-      message: ""
+      message: "",
+      post: "Post comment"
     };
   },
   methods: {
@@ -47,6 +52,7 @@ export default {
         });
       }
       this.message = "";
+      this.$refs["input"].focus();
     },
     removeComment(id) {
       this.comments.splice(id, 1);
@@ -56,6 +62,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/scss/_variables";
+.btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  white-space: nowrap;
+}
+
+input:focus {
+  & + .btn {
+    border-color: $primary-color;
+  }
+}
+
 .slide-fade-enter-active {
   transition: all 0.15s ease-out;
 }

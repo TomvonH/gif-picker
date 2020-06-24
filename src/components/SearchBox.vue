@@ -3,9 +3,6 @@
     <transition name="sliding">
       <div class="hero" v-if="allGifs.length <= 0">
         <img :src="src" />
-        <!-- <h1>{{title}}</h1> -->
-        <!-- <h3>{{subTitleOne}}</h3>
-        <h3>{{subTitleTwo}}</h3>-->
       </div>
     </transition>
     <MainSearch @getGifs="getGifs($event)" :title="searchTitle" :placeholder="placeholder" />
@@ -28,7 +25,6 @@
 import GiphsList from "./GiphsList";
 import Pagination from "./Pagination";
 import MainSearch from "./MainSearch";
-// import TransitionExpand from "./TransitionExpand";
 
 export default {
   name: "SearchBox",
@@ -36,7 +32,6 @@ export default {
     GiphsList,
     Pagination,
     MainSearch
-    // TransitionExpand
   },
   props: {
     message: String
@@ -55,11 +50,8 @@ export default {
       pageCount: 0,
       currentPage: 1,
       src: "https://media.giphy.com/media/Xy6nEr568Vy9WAofEI/giphy.gif",
-      title: "Welcome to the gif picker",
-      subTitleOne: "",
-      subTitleTwo: "",
       searchTitle: "What are you looking for?",
-      placeholder: "Just type anything you want to see in gifs"
+      placeholder: "Just type anything you want!"
     };
   },
   mounted() {
@@ -115,6 +107,5 @@ export default {
 }
 .sliding-leave-to {
   height: 0;
-  // transform: translateY(-40px);
 }
 </style>

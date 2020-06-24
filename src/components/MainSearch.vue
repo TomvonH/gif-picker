@@ -1,18 +1,26 @@
 <template>
-  <div class="hero-bar" v-bind:class="{ 'pb-lg': allGifs.length <= 0 }">
-    <h2 class="hero-title" v-bind:class="{ 'hero-title-lg': allGifs.length <= 0 }">{{ title }}</h2>
-    <div class="search-field" v-bind:class="{ 'search-field-lg': allGifs.length <= 0 }">
-      <input
-        v-model="searchTerm"
-        @keyup.enter="getGifs"
-        type="text"
-        :placeholder="placeholder"
-        autofocus
-        class="input"
-      />
-      <BaseButton class="btn-inverted" @click.native="getGifs">{{search}}</BaseButton>
-      <h2 class="search-field-inline">or</h2>
-      <BaseButton class="btn-inverted" @click.native="$router.push('favorites')">{{checkFavorites}}</BaseButton>
+  <div
+    class="hero-bar"
+    v-bind:class="{ 'pb-lg': allGifs.length <= 0, 'hero-bar-scaled': allGifs.length > 0 }"
+  >
+    <div class="hero-container" v-bind:class="{ 'scaler': allGifs.length > 0 }">
+      <h2 class="hero-title" v-bind:class="{ 'hero-title-scaled': allGifs.length > 0 }">{{ title }}</h2>
+      <div class="search-field" v-bind:class="{ 'search-field-scaled': allGifs.length > 0 }">
+        <input
+          v-model="searchTerm"
+          @keyup.enter="getGifs"
+          type="text"
+          :placeholder="placeholder"
+          autofocus
+          class="input"
+        />
+        <BaseButton class="btn-inverted" @click.native="getGifs">{{search}}</BaseButton>
+        <h2 class="search-field-inline">or</h2>
+        <BaseButton
+          class="btn-inverted"
+          @click.native="$router.push('favorites')"
+        >{{checkFavorites}}</BaseButton>
+      </div>
     </div>
   </div>
 </template>
@@ -66,8 +74,16 @@ export default {
 }
 .search-field {
   display: flex;
-  flex-basis: 50%;
-  transition: all 0.2s ease-in;
+  flex-basis: 75%;
+
+  h2 {
+    font-size: 32px;
+  }
+  input,
+  button {
+    font-size: 32px;
+    border-width: 4px;
+  }
 
   button:first-of-type {
     border-left-width: 0px;
@@ -78,22 +94,25 @@ export default {
     margin-left: 10px;
   }
 }
-.hero-bar,
 .hero-title {
+  font-size: 48px;
+}
+.hero-bar {
+  height: 260px;
+}
+.hero-bar-scaled {
+  height: 130px;
   transition: all 0.2s ease-in;
+  padding-bottom: 0;
 }
-.hero-title-lg {
-  padding-bottom: 24px;
-  transform: translateZ(0) scale(1.5, 1.5);
-  backface-visibility: hidden;
-}
+
 .pb-lg {
   padding-bottom: 100px;
 }
 
-.search-field-lg {
-  transform: translateZ(0) scale(1.5, 1.5);
-  backface-visibility: hidden;
+.scaler {
+  transform: translateY(-15px) scale(0.5, 0.5);
+  transition: all 0.2s ease-in;
 }
 
 .search-field-inline {
@@ -101,5 +120,9 @@ export default {
   margin: auto;
   margin-left: 10px;
   color: $card-bg;
+  font-weight: 300;
+}
+.hero-container {
+  padding: 0;
 }
 </style>

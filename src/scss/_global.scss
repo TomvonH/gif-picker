@@ -1,10 +1,11 @@
 @import "./scss/_variables.scss";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
 
 
 // Main 
 #app {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $font-color;
@@ -40,6 +41,8 @@ body {
     font-weight: 700;
     color: $font-color;
     text-decoration: none;
+    padding: 3px 0;
+    border-top: 2px transparent solid;
 
     &:hover {
       border-bottom: 2px solid ;
@@ -63,19 +66,22 @@ body {
 } 
 .hero-bar {
   z-index: 1;
-  padding: 20px 40px;
   background: $primary-color;
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: center;
   position: sticky;
   top: 0;
+}
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 }
 .hero-title {
   margin-top: 0;
   flex-basis: 100%;
   text-align: center;
   color: $card-bg;
+  font-weight: 300;
 }
 
 //Comments
@@ -110,18 +116,16 @@ body {
 }
 
 .input-container {
-  position: relative;
-  button {
-    position: absolute;
-    color: $primary-color;
-    top: 4px;
-    right: 5px;
-    border: 0;
-    padding: 0;
+  display: flex;
+  input{
+    flex-grow:1;
     margin: 0;
-    background: transparent;
-    &:hover {
-      cursor: pointer;
+    border-color: grey;
+    border-right-width: 0px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    &:focus {
+      background-color: $card-bg;
     }
   }
 }
