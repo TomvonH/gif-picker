@@ -16,7 +16,9 @@
   line-height: 1.5;
   color: $primary-color;
   align-items: center;
+  justify-content: center;
   user-select: none;
+  white-space: nowrap;
   border: 2px solid $primary-color;
   border-radius: 2px;
   margin: 0;
@@ -30,6 +32,12 @@
     background-color: $primary-color;
     color: $card-bg;
     cursor: pointer;
+  }
+
+  &.is-active {
+    background-color: $primary-color;
+    color: $card-bg;
+    pointer-events: none;
   }
 }
 .btn-inverted {

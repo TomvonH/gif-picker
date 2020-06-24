@@ -33,7 +33,6 @@ export default new Vuex.Store({
       favorite["comments"] = [];
       favorite["isFavorite"] = true;
       state.favorites.push(favorite);
-      console.log("add Fav: ", state.favorites)
     },
     removeFavorite: (state, payload) => {
       let i = state.favorites.map(item => item.id).indexOf(payload.id)
@@ -55,7 +54,6 @@ export default new Vuex.Store({
     },
     resetGifs: (state) => {
       state.allGifs = []
-      console.log("ALL_GIFS: ", state.allGifs)
     }
 
 

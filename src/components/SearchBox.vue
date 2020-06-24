@@ -10,11 +10,11 @@
       <div class="container" v-if="allGifs.length > 0" :key="allGifs[0].id">
         <GiphsList :gifs="allGifs" />
         <Pagination
+          :showNumbers="false"
           :current-page="currentPage"
           :page-count="pageCount"
           @nextPage="pageChangeHandle('next')"
           @previousPage="pageChangeHandle('previous')"
-          @loadPage="pageChangeHandle"
         />
       </div>
     </transition>
