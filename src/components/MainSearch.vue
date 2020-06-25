@@ -44,7 +44,7 @@ export default {
     return {
       searchTerm: "",
       search: "Search",
-      checkFavorites: "View my favorites"
+      checkFavorites: "View your favorites"
     };
   },
   methods: {

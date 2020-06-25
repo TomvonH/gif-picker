@@ -50,7 +50,7 @@ export default {
       pageCount: 0,
       currentPage: 1,
       src: "https://media.giphy.com/media/Xy6nEr568Vy9WAofEI/giphy.gif",
-      searchTitle: "What are you looking for?",
+      searchTitle: "Find your favorite gifs",
       placeholder: "Just type anything you want!"
     };
   },
